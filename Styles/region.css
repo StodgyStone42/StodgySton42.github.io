@@ -1,0 +1,36 @@
+﻿#myInput {
+    background-image: url('..//Images/search.png');
+    background-position: 10px 12px; 
+    background-repeat: no-repeat; 
+    width: 50%; 
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px;
+   
+}
+
+@media only screen and (max-width : 700px){
+    .rcontent {
+        max-width: 1000px;
+        margin: auto;
+        background-color:green;
+        padding: 10px;
+       
+    }
+    table, th, td {
+ font-size: 15px;
+}
+}
+.rcontent {
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+    padding: 10px;
+   
+}
+
+#myTable tr.header, #myTable tr:hover {
+    background-color: #23395d;
+    color:white;
+}

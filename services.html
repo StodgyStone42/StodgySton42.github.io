@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Services | Specialized Deliveries </title>
+    <link href="Styles/Navbar.css" rel="stylesheet" />
+    <link href="Styles/services.css" rel="stylesheet" />
+    <link href="Styles/footer.css" rel="stylesheet" />
+    <link href="Styles/header.css" rel="stylesheet" />
+    <script src="Scripts/header.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="icon" type="image/png" href="Images/tempLOGO.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo" onclick="location.href = 'home.html';" style="cursor: pointer;">
+
+        </div>
+        <a class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <div class="menu">
+
+            <a href="home.html">Home</a>
+            <div class="a">
+                <a class="active" href="services.html">Services &#8681</a>
+                <div class="dropdown-c">
+                    <a href="services.html#DS" style="padding: 0px 0px; ">Domestic Services</a><hr />
+                    <a href="services.html#int" style="padding: 0px 0px; ">International</a><hr />
+                    <a href="services.html#cam" style="padding: 0px 0px; ">Campaign/Distributions</a><hr />
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="header">
+        <div class="slideshowContainer">
+
+            <img class="imageSlides" src="Images/1.jpg" alt="banner">
+            <img class="imageSlides" src="Images/2.jpg" alt="">
+            <img class="imageSlides" src="Images/3.jpg" alt="">
+
+
+            <span id="leftArrow" class="slideshowArrow">&triangleleft;</span>
+            <span id="rightArrow" class="slideshowArrow">&triangleright;</span>
+
+            <div class="slideshowCircles">
+
+                <span class="circle dot"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
+
+        </div>
+        <script>
+
+            var imageSlides = document.getElementsByClassName('imageSlides');
+            var circles = document.getElementsByClassName('circle');
+            var leftArrow = document.getElementById('leftArrow');
+            var rightArrow = document.getElementById('rightArrow');
+            var counter = 0;
+
+
+            function hideImages() {
+                for (var i = 0; i < imageSlides.length; i++) {
+                    imageSlides[i].classList.remove('visible');
+                }
+            }
+
+
+            function removeDots() {
+                for (var i = 0; i < imageSlides.length; i++) {
+                    circles[i].classList.remove('dot');
+                }
+            }
+
+
+            function imageLoop() {
+                var currentImage = imageSlides[counter];
+                var currentDot = circles[counter];
+                currentImage.classList.add('visible');
+                removeDots();
+                currentDot.classList.add('dot');
+                counter++;
+            }
+
+
+            function arrowClick(e) {
+                var target = e.target;
+                if (target == leftArrow) {
+                    clearInterval(imageSlideshowInterval);
+                    hideImages();
+                    removeDots();
+                    if (counter == 1) {
+                        counter = (imageSlides.length - 1);
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    } else {
+                        counter--;
+                        counter--;
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    }
+                }
+                else if (target == rightArrow) {
+                    clearInterval(imageSlideshowInterval);
+                    hideImages();
+                    removeDots();
+                    if (counter == imageSlides.length) {
+                        counter = 0;
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    } else {
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    }
+                }
+            }
+
+            leftArrow.addEventListener('click', arrowClick);
+            rightArrow.addEventListener('click', arrowClick);
+
+
+
+            function slideshow() {
+                if (counter < imageSlides.length) {
+                    imageLoop();
+                } else {
+                    counter = 0;
+                    hideImages();
+                    imageLoop();
+                }
+            }
+
+
+            setTimeout(slideshow, 1000);
+            var imageSlideshowInterval = setInterval(slideshow, 5000);
+        </script>
+
+
+    </div>
+    
+    
+        
+        <div class="services">
+            
+                
+                <div class="domestic">
+                    <div class="servicecontent">
+                        <div  id="DS" class="fixedlink"></div>
+                        <h2 style="text-align:center; font-weight:bold;" >DOMESTIC SERVICES </h2>
+                        <div class="serviceimg">
+                            <img src="Images/RF.png" height="300" width="300"  />
+                            <img style="margin-top:30%;" src="Images/national.png" height="300" width="300"  />
+                            
+                        </div>
+                        <div class="textservice">
+
+                            <p>
+                                <h4>SAME DAY TO MAJOR CENTRES (SDX)</h4>
+
+                                Please check with our Office as to flights availability. Sameday Service is offered to the following Major Centres: Johannesburg/Durban/Port Elizabeth/George/East London.
+                                Coastal flights to ELS/PLZ AND GRJ are limited.
+
+                                <br />
+                                <br />
+
+
+                                <h4>LOCAL SAME DAY (SDX)</h4>
+
+                                Local samedays are available in all Major Centres.
+                                Please contact our office for more information.
+                                <br />
+                                <br />
+
+
+                                <h4>LOCAL OVERNIGHT (ONX)</h4>
+
+                                Local Overnight service available in all Major Centres, collect and deliver the following Morning by 11h00.
+                                Please check with our office for more information.
+                                <br />
+                                <br />
+                                <h4>COURIER EXPRESS BY 11H00 (ONX)</h4>
+
+                                Service is available to all Major Centres – JNB/PLZ/ELS/GRJ/DUR/BFN
+                                Deliver the following morning by 11h00.
+                                If an earlier time is required, please mark the Waybill clearly, for further assistance please contact our Office.
+                                All shipments collected on a Friday, will only be delivered the Monday, unless otherwise specified on the waybill, the same will apply to Public Holidays, whereby the shipment will only be delivered the next working day, unless specified otherwise.
+                                <br />
+                                <br />
+                                <h4>NEXT DAY BY 17H00 (NDX)</h4>
+
+                                Service only available to JNB, due to limited flights to the other Major Centres.
+                                All shipments sent NDX will be delivered the following day before close of Business (17h00), if there are no delays with the Airlines. All regional Areas will require a 24 HR handover.
+                                <br />
+                                <br />
+
+                                <h4>ROAD FREIGHT EXPRESS (RDX)</h4>
+
+                                Service available to all Major Destination, delivery within 48 – 72 hrs, depending of destination. All regional shipments would require and extra 24 hrs.
+                                <br />
+                                <br />
+
+                                <h4>REGIONAL NETWORK WITHIN THE WESTERN CAPE</h4>
+                                We service majority of the Towns within the Greater Western Cape. Contact our offices for further
+                                assistance.<br />
+                                <a href="regional-areas.html" >REGIONAL AREAS AND SERVICE DAYS</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="int">
+                    <div class="servicecontent">
+                      <div id="int" class="fixedlink"></div>
+                        <h2 style="text-align:center; font-weight:bold;" id="int">INTERNATIONAL (INT) </h2>
+                        <div class="serviceimg">
+                            <img src="Images/int.png" height="300" width="300" />
+
+                        </div>
+                        <div class="textservice2">
+                            <h4>Please contact our Office for more Information.</h4>
+                        </div>
+                    </div>
+                </div>
+                        <div class="campaign">
+                            <div class="servicecontent">
+                                <div id="cam" class="fixedlink"></div>
+                                    <h2 style="text-align:center; font-weight:bold;" id="cam">CAMPAIGNS/DISTRIBUTIONS</h2>
+                                <div class="serviceimg">
+                                    <img src="Images/Cam.png" height="300" width="300" />
+
+                                </div>
+                                <div class="textservice2">
+                                    <h4>Please contact our Office for more Information.</h4>
+                                </div>
+                            </div>
+                        </div>                 
+                </div>
+
+    <div class="footer">
+
+        <div class="footcontent">
+            <div class="footccontent">
+
+                <div class="socials">
+
+                    <div class="row">
+                        <div class="col">
+                            <h3>Contact us  </h3>
+                            <span><a style="text-decoration:none; font-style:italic; " href="contactus.html">Contact form</a>  </span>
+                            <h4>Numbers:</h4>
+                            <span class="block"> Landline: &nbsp;+27 21 552 0834</span>
+                            <span class="block"> Afterhours: +27 82 446 8774 </span> <br />
+                            <span> <a href="https://www.facebook.com/specdel/"><img class="facebook" src="Images/facebook.png" /></a>  </span>
+                            <h4>Emails:</h4>
+                            <span> Queries:<a href="mailto:csd@specdel.co.za"><i class="fas fa-envelope"></i></a>  </span>
+                            <span> &nbsp;Quotes:<a href="mailto:info@specdel.co.za"><i class="fas fa-envelope"></i></a>  </span>
+                        </div>
+                        <div class="col">
+                            <h3>Address</h3>
+                            <H5>Centurion Business Park, Democracy Way, Milnerton, Cape Town, 7440</H5>
+                            <a href="https://www.google.com/maps/dir//Specialized+Deliveries,+H1+Centurion+Business+Park,+Democracy+Way,+Milnerton,+Cape+Town,+7440/@-33.879017,18.508535,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1dcc5ea7bb4438b5:0xfc1de189da045ca1!2m2!1d18.508535!2d-33.879017"><img src="Images/map.png" style="width:75%;" /></a>
+                        </div>
+                        <div class="col">
+                            <h3>Office hours</h3>
+                            <p>Monday - Friday 07h00 till 19h00</p>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="footbottom">
+
+                    <a style="float:left;color:white; text-decoration:none;font-size:11px;">&copy;Specialized Deliveries 2003-2019 </a>
+                    <a style="float:right;color:white; text-decoration:none;font-size:13px">Designed by Tristan Debuys</a>
+                    <a style="align-content:center;color:white; text-decoration:none;" href="terms-conditions.html">Terms & Conditions </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        $(".btn").on("click", function () {
+            $('.menu').toggleClass("show");
+        });
+    </script>
+</body>
+</html>

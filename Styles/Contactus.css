@@ -1,0 +1,134 @@
+﻿body {
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #1B77EC;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=checkbox] {
+    vertical-align:middle;
+}
+
+    /* When moving the mouse over the submit button, add a darker green color */
+    input[type=submit]:hover {
+        background-color: #23395d;
+    }
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    height: 505px;
+    display: flex;
+    justify-content: center
+}
+.containerb {
+    height: 911px;
+    display: flex;
+    justify-content: center
+}
+
+.yesorno{
+    display:none;
+}
+
+.emailv {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+.namev {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+.subjectv {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+.messv {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+.amountv {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+.servicev {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+.locationv {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+.weightv {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+.dimv {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+.destv {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin-top: -10px;
+}
+.qcontent {
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+    padding: 10px;
+    height: 527px;
+}
+.qbcontent {
+    height: 935px;
+}
+
+
+.cell{
+    display:inline-block;
+   
+}
+.needq {
+    display: grid;
+}

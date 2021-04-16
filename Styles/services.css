@@ -1,0 +1,16 @@
+﻿.dropdown {
+    display: table-row;
+    
+}
+
+.dropdown-content {
+    display: none;
+    background-color: lightblue;
+    max-width: 200px;
+    z-index:1;
+   
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Us | Specialized Deliveries </title>
+    <link href="Styles/Navbar.css" rel="stylesheet" />
+    <link href="Styles/services.css" rel="stylesheet" />
+    <link href="Styles/footer.css" rel="stylesheet" />
+    <link href="Styles/header.css" rel="stylesheet" />
+    <script src="Scripts/header.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link href="Styles/Contactus.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="icon" type="image/png" href="Images/tempLOGO.png" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="Scripts/Contact.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo" onclick="location.href = 'home.html';" style="cursor: pointer;">
+
+        </div>
+        <a class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <div class="menu">
+
+            <a  href="home.html">Home</a>
+            <div class="a">
+                <a href="services.html">Services &#8681</a>
+                <div class="dropdown-c">
+                    <a href="services.html#DS" style="padding: 0px 0px; ">Domestic Services</a><hr />
+                    <a href="services.html#int" style="padding: 0px 0px; ">International</a><hr />
+                    <a href="services.html#cam" style="padding: 0px 0px; ">Campaign/Distributions</a><hr />
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a class="active" href="contact-us.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="header">
+        <div class="slideshowContainer">
+
+            <img class="imageSlides" src="Images/1.jpg" alt="banner">
+            <img class="imageSlides" src="Images/2.jpg" alt="">
+            <img class="imageSlides" src="Images/3.jpg" alt="">
+
+
+            <span id="leftArrow" class="slideshowArrow">&triangleleft;</span>
+            <span id="rightArrow" class="slideshowArrow">&triangleright;</span>
+
+            <div class="slideshowCircles">
+
+                <span class="circle dot"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
+
+        </div>
+        <script>
+
+            var imageSlides = document.getElementsByClassName('imageSlides');
+            var circles = document.getElementsByClassName('circle');
+            var leftArrow = document.getElementById('leftArrow');
+            var rightArrow = document.getElementById('rightArrow');
+            var counter = 0;
+
+
+            function hideImages() {
+                for (var i = 0; i < imageSlides.length; i++) {
+                    imageSlides[i].classList.remove('visible');
+                }
+            }
+
+
+            function removeDots() {
+                for (var i = 0; i < imageSlides.length; i++) {
+                    circles[i].classList.remove('dot');
+                }
+            }
+
+
+            function imageLoop() {
+                var currentImage = imageSlides[counter];
+                var currentDot = circles[counter];
+                currentImage.classList.add('visible');
+                removeDots();
+                currentDot.classList.add('dot');
+                counter++;
+            }
+
+
+            function arrowClick(e) {
+                var target = e.target;
+                if (target == leftArrow) {
+                    clearInterval(imageSlideshowInterval);
+                    hideImages();
+                    removeDots();
+                    if (counter == 1) {
+                        counter = (imageSlides.length - 1);
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    } else {
+                        counter--;
+                        counter--;
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    }
+                }
+                else if (target == rightArrow) {
+                    clearInterval(imageSlideshowInterval);
+                    hideImages();
+                    removeDots();
+                    if (counter == imageSlides.length) {
+                        counter = 0;
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    } else {
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    }
+                }
+            }
+
+            leftArrow.addEventListener('click', arrowClick);
+            rightArrow.addEventListener('click', arrowClick);
+
+
+
+            function slideshow() {
+                if (counter < imageSlides.length) {
+                    imageLoop();
+                } else {
+                    counter = 0;
+                    hideImages();
+                    imageLoop();
+                }
+            }
+
+
+            setTimeout(slideshow, 1000);
+            var imageSlideshowInterval = setInterval(slideshow, 5000);
+        </script>
+    </div>
+    <script type="text/javascript">
+
+        $(".btn").on("click", function () {
+            $('.menu').toggleClass("show");
+        });
+    </script>
+    <div class="pagewrapper">
+
+            <div class="qcontent">
+                 <div class="container">
+                    <form action="https://formspree.io/info@specdel.co.za" method="POST">
+                        <div class="cell">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="Name" placeholder="Customer Name/Company Name...">
+                            <div class="namev"></div>
+                            
+                        </div>
+                        <div class="cell">
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="Email" placeholder="Your Email...">
+                            <div class="emailv"></div>
+                        </div>
+                    
+                        <br />
+                   <div class="noq">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject...">
+                        <div class="subjectv"></div>
+                        <br />
+                    
+                        <label for="message">Message</label>
+                        <textarea id="message" name="Message" placeholder="Message..."></textarea>
+                        <div class="messv"></div>
+                        <br />
+                    </div>  
+
+                    <label for="rquote">Do you require a quote?</label>
+                    <input type="checkbox" id="rquote" />
+                    <br /> <br />
+                    <div class="yesorno">
+                        <input type="text" id="qyesno" name="Asked for a quote" value="No" />
+                    </div>
+
+
+                    <div class="needq">
+
+                        
+                            <label for="pnumber">Total Parcel(s): </label>
+                            <input type="text" id="pnumber" name="Total Parcel(s)" placeholder="How many parcel(s)...">
+                            <div class="amountv"></div>
+                        
+
+                        
+                            <label for="servlevel">Service Level: </label>
+                            <select id="servlevel" name="Service level chose">
+                                <option class="yesorno"></option>
+                                <option value="Road freight">Road freight</option>
+                                <option value="Overnight">Overnight</option>
+                                <option value="Nextday">Nextday</option>
+                                <option value="Sameday">Sameday</option>
+                                <option value="Special Drive Aways ">Special Drive Aways </option>
+                                <option value="Regional Collection">Regional Area</option>
+                            </select>
+                            <div class="servicev">
+
+                            </div>
+                        
+                        <br />
+                        <label for="plocation">Collection Address:</label>
+                        <textarea id="plocation" name="Collection Address" placeholder="Where the parcel needs to be collected from..."></textarea>
+                        <div class="locationv"></div>
+
+                        <label for="tweight">Total Weight: </label>
+                        <input type="text" id="tweight" name="Total Weight" placeholder="kg">
+                        <div class="weightv"></div>
+
+                        <label for="pdim">Dimensions :</label>
+                        <textarea id="pdim" name="Dimensions" placeholder="cm"></textarea>
+                        <div class="dimv"></div>
+
+                        <label for="pdestination">Delivery Address: </label>
+                        <textarea id="pdestination" name="Delivery address" placeholder="Where the parcel is going to..."></textarea>
+                        <div class="destv"></div>
+
+                    </div>
+                    <input type="submit" class="submit" value="Send">
+
+                </form>
+            </div>
+        </div>
+    </div>
+       <div class="footer">
+
+        <div class="footcontent">
+            <div class="footccontent">
+
+                <div class="socials">
+
+                    <div class="row">
+                        <div class="col">
+                            <h3>Contact us  </h3>
+                            <span><a style="text-decoration:none; font-style:italic; " href="contactus.html">Contact form</a>  </span>
+                            <h4>Numbers:</h4>
+                            <span class="block"> Landline: &nbsp;+27 21 552 0834</span>
+                            <span class="block"> Afterhours: +27 82 446 8774 </span> <br />
+                            <span> <a href="https://www.facebook.com/specdel/"><img class="facebook" src="Images/facebook.png" /></a>  </span>
+                            <h4>Emails:</h4>
+                            <span> Queries:<a href="mailto:csd@specdel.co.za"><i class="fas fa-envelope"></i></a>  </span>
+                            <span> &nbsp;Quotes:<a href="mailto:info@specdel.co.za"><i class="fas fa-envelope"></i></a>  </span>
+                        </div>
+                        <div class="col">
+                            <h3>Address</h3>
+                            <H5>Centurion Business Park, Democracy Way, Milnerton, Cape Town, 7440</H5>
+                            <a href="https://www.google.com/maps/dir//Specialized+Deliveries,+H1+Centurion+Business+Park,+Democracy+Way,+Milnerton,+Cape+Town,+7440/@-33.879017,18.508535,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1dcc5ea7bb4438b5:0xfc1de189da045ca1!2m2!1d18.508535!2d-33.879017"><img src="Images/map.png" style="width:75%;" /></a>
+                        </div>
+                        <div class="col">
+                            <h3>Office hours</h3>
+                            <p>Monday - Friday 07h00 till 19h00</p>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="footbottom">
+
+                    <a style="float:left;color:white; text-decoration:none;font-size:11px;">&copy;Specialized Deliveries 2003-2019 </a>
+                    <a style="float:right;color:white; text-decoration:none;font-size:13px">Designed by Tristan Debuys</a>
+                    <a style="align-content:center;color:white; text-decoration:none;" href="terms-conditions.html">Terms & Conditions </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
