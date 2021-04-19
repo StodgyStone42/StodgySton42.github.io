@@ -1,88 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
 <head>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.0.1/trianglify.min.js"></script>
-
-  <script>
-  (function() {
-    document.addEventListener('DOMContentLoaded', function() {
-
-    var pattern = Trianglify({
-      cell_size: 75,
-      variance: 0.35,
-      seed: 'specializeddeliveries.co.za',
-      x_colors: ['D3D2C7', '#6EC0C5', '#133DC6'],
-      y_colors: 'random',
-      color_space: 'rgb',
-      color_function: false,
-      width: window.innerWidth,
-      height: window.innerHeight,
-      color_function: null
-    });
-
-    window.onresize = function(){ location.reload(); }
-    window.resize = function(){ location.reload(); }
-    document.body.appendChild(pattern.canvas());
-    });
-  }());
-  </script>
+    <meta charset="utf-8" />
+    <title>Specialized Deliveries</title>
+    <link href="Styles/Navbar.css" rel="stylesheet" />
+    <link href="Styles/services.css" rel="stylesheet" />
+    <link href="Styles/footer.css" rel="stylesheet" />
+    <link href="Styles/header.css" rel="stylesheet" />
+    <script src="Scripts/header.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="icon" type="image/png" href="Images/tempLOGO.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
+<body style="background-image: url(Images/4.jpg);background-repeat: no-repeat; background-position: top;margin: 0 0 0 0;padding: 0 0 0 0;background-position-y: 51px;">
+    <div class="navbar">
+        <div class="logo" onclick="location.href = 'index.html';" style="cursor: pointer;">
 
-<body>
-   <div class='center'>
-      <h1>Reserved for</h1>
-      <h2>specializeddeliveries.co.za</h2>
-  </div>
+        </div>
+        <a class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <div class="menu">
+            
+            <a class="active" href="index.html">Home</a>
+            <div class="a">
+                <a href="services.html">Services &#8681</a>
+                <div class="dropdown-c">
+                    <a href="services.html#DS" style="padding: 0px 0px; ">Domestic Services</a><hr />
+                    <a href="services.html#int" style="padding: 0px 0px; ">International</a><hr />
+                    <a href="services.html#cam" style="padding: 0px 0px; ">Campaign/Distributions</a><hr />
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="header">
+        <div class="slideshowContainer">
 
-  <style>
-    body{
-      margin: 0;
-  }
-    .fullscreenDiv {
-      background-color: #e8e8e8;
-      width: 100%;
-      height: auto;
-      bottom: 0px;
-      top: 0px;
-      left: 0;
-      position: absolute;
-    }
+            <img class="imageSlides" src="Images/1.jpg" alt="banner">
+            <img class="imageSlides" src="Images/2.jpg" alt="">
+            <img class="imageSlides" src="Images/3.jpg" alt="">
 
-    h1 {
-      color: #ffffff;
-      font-family: 'Raleway',sans-serif;
-      font-size: 2em;
-      /*margin: 0 0 24px;*/
-      /*text-shadow: 1px 1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, -1px -1px 0 #333;*/
-    }
+           
+            <span id="leftArrow" class="slideshowArrow">&triangleleft;</span>
+            <span id="rightArrow" class="slideshowArrow">&triangleright;</span>
 
-    h2 {
-      color: #ffffff;
-      font-family: 'Raleway',sans-serif;
-      font-size: 3em;
-      /*margin: 0 0 24px;*/
-      text-transform: lowercase;
-      /*text-shadow: 1px 1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, -1px -1px 0 #333;*/
-    }
+            <div class="slideshowCircles">
+               
+                <span class="circle dot"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
 
-    .center {
-      text-align: center;
-      position: absolute;
-      width:100%;
-      top: 40vh;
-    }
-    canvas{
-      min-width: 100% !important;
-      min-height: 100% !important;
-    }
-      @media only screen and (max-width: 400px) { h1 { font-size: 0.75em; } }
-      @media only screen and (max-width: 800px) { h1 { font-size: 2em; } }
-      @media only screen and (max-width: 400px) { h2 { font-size: 0.75em; } }
-      @media only screen and (max-width: 800px) { h2 { font-size: 2em; } }
-  </style>
+        </div>
+        <script>
+           
+            var imageSlides = document.getElementsByClassName('imageSlides');
+            var circles = document.getElementsByClassName('circle');
+            var leftArrow = document.getElementById('leftArrow');
+            var rightArrow = document.getElementById('rightArrow');
+            var counter = 0;
+
+            
+            function hideImages() {
+                for (var i = 0; i < imageSlides.length; i++) {
+                    imageSlides[i].classList.remove('visible');
+                }
+            }
+
+            
+            function removeDots() {
+                for (var i = 0; i < imageSlides.length; i++) {
+                    circles[i].classList.remove('dot');
+                }
+            }
+
+            
+            function imageLoop() {
+                var currentImage = imageSlides[counter];
+                var currentDot = circles[counter];
+                currentImage.classList.add('visible');
+                removeDots();
+                currentDot.classList.add('dot');
+                counter++;
+            }
+
+           
+            function arrowClick(e) {
+                var target = e.target;
+                if (target == leftArrow) {
+                    clearInterval(imageSlideshowInterval);
+                    hideImages();
+                    removeDots();
+                    if (counter == 1) {
+                        counter = (imageSlides.length - 1);
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    } else {
+                        counter--;
+                        counter--;
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    }
+                }
+                else if (target == rightArrow) {
+                    clearInterval(imageSlideshowInterval);
+                    hideImages();
+                    removeDots();
+                    if (counter == imageSlides.length) {
+                        counter = 0;
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    } else {
+                        imageLoop();
+                        imageSlideshowInterval = setInterval(slideshow, 5000);
+                    }
+                }
+            }
+
+            leftArrow.addEventListener('click', arrowClick);
+            rightArrow.addEventListener('click', arrowClick);
+
+
+            
+            function slideshow() {
+                if (counter < imageSlides.length) {
+                    imageLoop();
+                } else {
+                    counter = 0;
+                    hideImages();
+                    imageLoop();
+                }
+            }
+
+            
+            setTimeout(slideshow, 1000);
+            var imageSlideshowInterval = setInterval(slideshow, 5000);
+        </script>
+
+
+    </div>
+    <div class="pagewrapper">
+        
+        <div class="content">
+
+            <br />
+
+            <div class="description">
+                <p>
+                    At Specialized Deliveries we are passionate about our Business, we offer the best possible service
+                    solution at a reasonable cost.<br /><br />
+                    We have teamed up with Service Providers/Partners, whereby we can offer a service to any
+                    destination being Local – National- International, by ensuring delivery on time every time.<br /><br />
+                    Specialized Deliveries was established in 2003, with the core focus of supplying a local same day
+                    service in and around the Cape Peninsula, but as time progressed our Business started to evolve, our
+                    existing Clients wanted more. After doing some extensive research and finding the best possible
+                    solution in offering more services, we teamed up with Service Providers/Partners, which gave us the
+                    platform to offer more services. Today, we can proudly say that we can offer a service to any
+                    Destination around the Globe.<br /><br />
+                    Our Success is based on Passion, Commitment, Reliability from our Staff and Service
+                    Providers/Partners.<br /><br />
+                    Our Priority is ensuring that our Client’s packages are delivered to their destination, in the same
+                    condition, as to when it was dispatched.<br /><br />
+                    For Personalized Assistance, we have a dedicated Customer Services Department, which will assist
+                    you with any query too hand.<br /><br />
+                    Proof of delivery will be available within 24 hours of a delivery, whereby an image and a verbal proof
+                    of delivery will be available  (<a href="pod.html">HERE</a> or click the Red Icon in footer). In case of an urgent
+                    verbal proof of delivery, our Customer Services Department will gladly assist.<br /><br />
+                    We believe our Staff are our most important asset and we encourage them to be creative in what
+                    they do.<br /><br />
+                </p>
+                
+                
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        $(".btn").on("click", function () {
+            $('.menu').toggleClass("show");
+        });
+
+
+    </script>
+
+
+    <div class="footer">
+
+        <div class="footcontent">
+            <div class="footccontent">
+
+                <div class="socials">
+
+                    <div class="row">
+                        <div class="col">
+                            <h3>Contact us  </h3>
+                            <span><a style="text-decoration:none; font-style:italic; font-weight:bold; " href="contactus.html">Contact form</a>  </span>
+                            <h4>Numbers:</h4>
+                            <span class="block"> Landline: &nbsp;+27 21 552 0834</span>
+                            <span class="block"> Afterhours: +27 82 446 8774 </span> <br />
+                            <span> <a href="https://www.facebook.com/specdel/"><img class="facebook" src="Images/facebook.png" /></a>  </span>
+                            <h4>Emails:</h4>
+                            <span> Queries:<a href="mailto:csd@specdel.co.za"><i class="fas fa-envelope"></i></a>  </span>
+                            <span> &nbsp;Quotes:<a href="mailto:info@specdel.co.za"><i class="fas fa-envelope"></i></a>  </span>
+                        </div>
+                        <div class="col">
+                            <h3>Address</h3>
+                            <H5>Unit H1,Centurion Business Park, Democracy Way, Milnerton, Cape Town, 7440</H5>
+                            <a href="https://www.google.com/maps/dir//Specialized+Deliveries,+H1+Centurion+Business+Park,+Democracy+Way,+Milnerton,+Cape+Town,+7440/@-33.879017,18.508535,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1dcc5ea7bb4438b5:0xfc1de189da045ca1!2m2!1d18.508535!2d-33.879017"><img src="Images/map.png" style="width:75%;"/></a>
+                        </div>
+                        <div class="col">
+                            <h3>Office hours</h3>
+                            <p style="font-weight:bold;">Monday - Friday: 07h00 till 19h00</p>
+                            <h4>POD:</h4>
+                            <a href="pod.html"> <img src="Images/red.png" style="height:25%;"/></a>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="footbottom">
+
+                    <a style="float:left;color:white; text-decoration:none;font-size:11px;">&copy;Specialized Deliveries 2003-2019 </a>
+                    <a style="float:right;color:white; text-decoration:none;font-size:13px">Designed by Tristan Debuys</a>
+                    <a style="align-content:center;color:white; text-decoration:none;" href="terms-conditions.html">Terms & Conditions </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+
